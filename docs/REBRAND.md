@@ -16,7 +16,8 @@ Date: 7 November 2026. Owner request: rename STILLVEIN to Kapish Stonex everywhe
 - Existing Vercel project **prj_rJyidfiuiTkVVKPGq3QedS5Ihfqe** renamed to `kapish-stonex`. Its GitHub link was repaired to the same numeric repository ID and production branch.
 - Canonical origin configured as [kapish-stonex.vercel.app](https://kapish-stonex.vercel.app). Old hosted aliases are retained and redirected to the canonical origin by Next.js; strict CSRF origin checks are not weakened.
 - Canonical Firebase Auth domain added; all existing authorized domains retained.
-- Deployment and hosted acceptance: **pending the source push and final hosted checks** at this report revision.
+- **Live and verified:** application commit `9fe2caa51833436afe03604fe6e4d4452a522915`, GitHub-triggered production deployment `dpl_ByEHpT1LhRmUYRVfaD5kpH79CC94`, state READY. Documentation-only commits after this application commit do not change the tested application.
+- The canonical address is attached as a verified production domain, not just an ad-hoc alias. Initial domain propagation returned 404 and then Vercel SSO; attaching the production domain resolved this without disabling preview/deployment protection. The complete eight-workflow hosted repeat then passed publicly, with no bypass token.
 
 ## Data safety
 
@@ -31,5 +32,9 @@ The existing Firebase project/service account IDs, signed upload preset, earlier
 - **8 optimized-build browser workflows passed**: four each in Chromium and WebKit. Cover eight public/staff pages, brand/name absence checks, actual loaded emblem/font styling, metadata/asset responses, existing-material comparison migration/removal and 320/360/390/768/1440-pixel layout.
 - Public homepage/footer and social-card renders visually inspected. Captures are local in the QA artifact folder, not public source commits.
 - Initial narrow-screen overflow and WebKit prefetch-cancellation failures were diagnosed. CSS was corrected and page transitions now await settled RSC prefetch; all eight workflows passed on a fresh full repeat.
+- **8 hosted browser workflows passed**, again four each in Chromium and WebKit, against the public canonical domain. All four hosted brand assets match their local source bytes/SHA-256. The old public bookmark `/collection?q=marble` redirects with HTTP 308 to the same path/query at the canonical origin.
+- Normal-motion hosted WebGL reached ready state with neither reduced-motion nor fallback active. Canvas RGB standard deviations were 67.65/66.60/66.11 (not an empty canvas); the scroll control advanced 1032 pixels and the rendered detail stage was inspected.
+- Canonical-origin invalid enquiry payload returned 400 without creating a record; an unrelated-origin request returned 403. Anonymous admin-product access returned 401. A final live dry-run found no branding changes remaining and the original non-brand inventory fingerprints still matched.
+- The existing Cloudinary preset remains signed, overwrite disabled, jpg/jpeg/png/webp-only, with no folder/asset-folder transformation that would conflict with the new destination prefix. No repeat authenticated live upload is claimed.
 
 Physical-device/human visual acceptance, trademark/legal review and repeat live authenticated upload acceptance are not claimed. The owner's existing personal/non-commercial Hobby hosting constraint remains; no paid plan was enabled and no unrelated application sources were edited.

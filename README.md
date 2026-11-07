@@ -1,5 +1,7 @@
 # Kapish Stonex — The Material Atlas
 
+![Kapish Stonex — Hanumanji-inspired gada and tilak identity](public/brand/social-card.png)
+
 A standalone natural-stone catalog, specification and interactive material-visualization application. This is **not a factory website, direct-purchase marketplace or payment system**. Visitors discover, compare and enquire; authorized staff curate the catalog and manage conversations.
 
 ## Delivery status
@@ -8,7 +10,7 @@ A standalone natural-stone catalog, specification and interactive material-visua
 
 Renamed at the owner's request with an elegant DM Serif Display / DM Sans wordmark and original Hanumanji-inspired gada/tilak emblem. The identity is shared by public pages, staff sign-in/sidebar, page metadata, favicons, social cards and CSV downloads. Existing comparison selections migrate safely. The stone-in-motion experience, catalogue and service data are retained.
 
-The original GitHub repository is renamed to [Alexwatson-de/Kapish-Stonex](https://github.com/Alexwatson-de/Kapish-Stonex), preserving its history and visibility. The same Vercel project is renamed and linked to the same repository ID. Canonical hosting is [kapish-stonex.vercel.app](https://kapish-stonex.vercel.app); old hosted addresses redirect after the new deployment. Publishing verification is recorded in [the rebrand report](docs/REBRAND.md).
+The original GitHub repository is renamed to [Alexwatson-de/Kapish-Stonex](https://github.com/Alexwatson-de/Kapish-Stonex), preserving its history and visibility. The same Vercel project is renamed and linked to the same repository ID. **Live and verified** at [kapish-stonex.vercel.app](https://kapish-stonex.vercel.app); the original public address redirects with paths/queries preserved. All eight hosted Chromium/WebKit rebrand workflows passed, alongside byte-matched brand assets and normal WebGL/scroll verification. Publishing verification is recorded in [the rebrand report](docs/REBRAND.md).
 
 The existing Firebase project ID, service identity, signed upload preset and earlier asset URLs remain unchanged intentionally. Recreating them would risk existing data. Only new image destinations use the new name. The workspace directory also stays stable for existing links. Brand migration changed only the saved `brand` setting plus an audit record; inventory fingerprints for products, images, enquiries, users and taxonomy were unchanged. No plan, billing or database-rule change.
 
