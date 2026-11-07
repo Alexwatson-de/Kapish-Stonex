@@ -11,13 +11,19 @@ import {
   Taxonomy,
 } from '../schema';
 import { matches } from '../catalog';
+import { currentBrand, rebrandLegacyText } from '../brand';
 export const now = () => new Date().toISOString();
 export function audit(actor: Actor, action: string, target: string) {
   return { actor: actor.uid, email: actor.email, action, target, at: now() };
 }
 export async function settings(): Promise<SiteSettings> {
   const data = (await services().db.doc('settings/public').get()).data();
-  return { ...defaultSettings, ...data } as SiteSettings;
+  const result = { ...defaultSettings, ...data } as SiteSettings;
+  // Also handles a deployment arriving before the narrow live-brand migration.
+  result.brand = currentBrand(result.brand);
+  for (const key of ['tagline', 'heroTitle', 'heroDescription', 'seoDescription', 'privacyText', 'termsText', 'enquiryCta'] as const)
+    result[key] = rebrandLegacyText(result[key]);
+  return result;
 }
 export async function taxonomy(): Promise<Taxonomy[]> {
   return (await services().db.collection('taxonomy').orderBy('name').limit(500).get()).docs.map(

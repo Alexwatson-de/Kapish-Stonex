@@ -12,7 +12,22 @@ export async function generateMetadata(): Promise<Metadata> {
     title: { default: `${s.brand} — ${s.tagline}`, template: `%s | ${s.brand}` },
     description: s.seoDescription,
     robots: { index: true, follow: true },
-    openGraph: { siteName: s.brand, title: s.brand, description: s.seoDescription },
+    icons: {
+      icon: [{ url: '/brand/favicon.svg', type: 'image/svg+xml' }],
+      apple: [{ url: '/brand/apple-touch-icon.png', sizes: '180x180' }],
+    },
+    openGraph: {
+      siteName: s.brand,
+      title: `${s.brand} — ${s.tagline}`,
+      description: s.seoDescription,
+      images: [{ url: '/brand/social-card.png', width: 1200, height: 630, alt: `${s.brand} — Natural stone, considered.` }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${s.brand} — ${s.tagline}`,
+      description: s.seoDescription,
+      images: ['/brand/social-card.png'],
+    },
   };
 }
 export default function RootLayout({ children }: { children: React.ReactNode }) {

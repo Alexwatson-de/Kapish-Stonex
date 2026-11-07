@@ -7,6 +7,7 @@ import { audit, now } from './data';
 import { idSchema } from '../schema';
 import { readImageBody } from './image-validation';
 import { MAX_IMAGE_BYTES, MAX_IMAGE_MB } from '../upload-policy';
+import { BRAND_SLUG } from '../brand';
 export function cloud() {
   const {
     CLOUDINARY_CLOUD_NAME: cloud_name,
@@ -50,7 +51,8 @@ export async function authorizeUpload(input: unknown, actor: Actor) {
       'Cloudinary preset must be signed, limited to jpg/png/webp and disable overwrite.',
     );
   const ticket = randomUUID();
-  const publicId = `stillvein/${p.kind === 'site' ? 'site' : `products/${p.productId}/${p.kind}`}/${ticket}`;
+  // Existing verified asset URLs/IDs stay unchanged; only new destinations use the new brand.
+  const publicId = `${BRAND_SLUG}/${p.kind === 'site' ? 'site' : `products/${p.productId}/${p.kind}`}/${ticket}`;
   await db.doc(`uploadTickets/${ticket}`).set({
     uid: actor.uid,
     publicId,

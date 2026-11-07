@@ -6,6 +6,16 @@ const config: NextConfig = {
   // a CJS require('jose') for Vercel's instrumented runtime. No crypto downgrade.
   transpilePackages: ['firebase-admin', 'jwks-rsa', 'jose'],
   serverExternalPackages: ['@google-cloud/firestore', '@google-cloud/storage'],
+  // Preserve bookmarked old URLs without serving forms on a noncanonical origin.
+  // CSRF origin checks remain strict; requests are not broadly allowlisted.
+  async redirects() {
+    return ['stillvein.vercel.app', 'stillvein-dhruv-820e.vercel.app', 'stillvein-git-main-dhruv-820e.vercel.app'].map((host) => ({
+      source: '/:path*',
+      has: [{ type: 'host' as const, value: host }],
+      destination: 'https://kapish-stonex.vercel.app/:path*',
+      permanent: true,
+    }));
+  },
   // Webpack development source maps require eval. It is never allowed in production.
   async headers() {
     return [

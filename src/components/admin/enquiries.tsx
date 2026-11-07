@@ -58,7 +58,7 @@ export function Enquiries() {
           className="button small"
           onClick={() =>
             download(
-              'stillvein-enquiries.csv',
+              'kapish-stonex-enquiries.csv',
               exportEnquiries(filtered as unknown as Record<string, unknown>[]),
             )
           }

@@ -41,3 +41,7 @@ https://github.com/google/fonts/tree/main/ofl/barlowcondensed.
 No Resn/Pioneer images, fonts, models or proprietary code are reused. The Corn
 Revolution site informs scroll choreography and cinematic transitions; the new
 WebGL slab/countertop geometry and motion are authored within this application.
+
+## Kapish Stonex emblem
+
+The gada/tilak/arch sign, simplified favicon and social-card composition are original vector/CSS artwork created for the owner's rebrand request. The mark is a Hanumanji-inspired symbolic sign, not a deity portrait or a copied religious/commercial logo. No trademark registration or cultural endorsement is claimed. The gada association was checked against [the Metropolitan Museum's Hanuman record](https://www.metmuseum.org/art/collection/search/826439) and [the Carlos Museum's Ramayana collection](https://digitalprojects.carlos.emory.edu/exhibits/show/ramayana/item/6826); no images from those sources are redistributed.

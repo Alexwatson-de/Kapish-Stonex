@@ -150,7 +150,7 @@ export function Products() {
         </select>
         <button
           className="button small"
-          onClick={() => download('stillvein-materials.csv', exportProducts(filtered))}
+          onClick={() => download('kapish-stonex-materials.csv', exportProducts(filtered))}
         >
           <Download size={14} /> Export {filtered.length}
         </button>

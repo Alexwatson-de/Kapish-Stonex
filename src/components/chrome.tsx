@@ -1,19 +1,12 @@
 import Link from 'next/link';
 import { ArrowUpRight, Box, ArrowRight } from 'lucide-react';
 import { SiteSettings, defaultSettings } from '@/lib/schema';
+import { BrandIdentity } from './brand-identity';
 export function Header({ settings = defaultSettings }: { settings?: SiteSettings }) {
   return (
     <header className="header">
       <Link className="wordmark" href="/" aria-label={`${settings.brand} home`}>
-        <span className="brand-mark" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-        </span>
-        <span>
-          {settings.brand}
-          <small>{settings.tagline}</small>
-        </span>
+        <BrandIdentity name={settings.brand} />
       </Link>
       <nav aria-label="Main navigation">
         <Link href="/collection">Collection</Link>
@@ -33,8 +26,8 @@ export function Footer({ settings = defaultSettings }: { settings?: SiteSettings
     <footer>
       <div className="footer-top">
         <div>
-          <Link href="/" className="wordmark">
-            {settings.brand}
+          <Link href="/" className="wordmark" aria-label={`${settings.brand} home`}>
+            <BrandIdentity name={settings.brand} />
           </Link>
           <p>
             A material library for spaces with intention.
@@ -85,7 +78,6 @@ export function Footer({ settings = defaultSettings }: { settings?: SiteSettings
       </div>
       <div className="footer-wordmark" aria-hidden="true">
         {settings.brand}
-        <span>®</span>
       </div>
     </footer>
   );

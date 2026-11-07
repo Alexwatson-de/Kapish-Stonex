@@ -5,6 +5,7 @@ import { Header, Footer } from '@/components/chrome';
 import { Product, defaultSettings, SiteSettings } from '@/lib/schema';
 import { api } from '@/lib/client';
 import { imageUrl, priceLabel } from '@/lib/catalog';
+import { readComparison, saveComparison } from '@/lib/comparison-storage';
 export default function Compare() {
   const [products, setProducts] = useState<Product[]>([]);
   const [settings, setSettings] = useState(defaultSettings);
@@ -16,7 +17,7 @@ export default function Compare() {
       .catch(() => {});
     let ids: string[] = [];
     try {
-      ids = JSON.parse(localStorage.getItem('stillvein.compare') || '[]');
+      ids = readComparison(localStorage);
     } catch {}
     if (!ids.length) {
       setLoading(false);
@@ -80,11 +81,13 @@ export default function Compare() {
                     className="text-link"
                     onClick={() => {
                       const remaining = products.filter((x) => x.id !== p.id);
+                      try {
+                        saveComparison(localStorage, remaining.map((x) => x.id));
+                      } catch {
+                        setError('Comparison could not be saved. Enable browser storage and try again.');
+                        return;
+                      }
                       setProducts(remaining);
-                      localStorage.setItem(
-                        'stillvein.compare',
-                        JSON.stringify(remaining.map((x) => x.id)),
-                      );
                       window.dispatchEvent(new Event('compare-change'));
                     }}
                   >

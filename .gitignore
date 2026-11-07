@@ -17,3 +17,6 @@ artifacts/qa/live-samples-*.png
 artifacts/reference/
 # Redesign inspection can include authenticated/private catalog information.
 artifacts/qa/revolution-*.png
+# Rebrand verification captures remain local; production brand assets are public/brand.
+artifacts/qa/kapish-stonex/
+.DS_Store

@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { BRAND_NAME } from './brand';
 export const idSchema = z.string().regex(/^[a-zA-Z0-9_-]{1,100}$/);
 const text = (max = 500) => z.string().trim().max(max);
 const strings = z.array(text(100)).max(40);
@@ -189,7 +190,7 @@ export const settingsSchema = z.object({
 });
 export type SiteSettings = z.infer<typeof settingsSchema>;
 export const defaultSettings: SiteSettings = {
-  brand: 'STILLVEIN',
+  brand: BRAND_NAME,
   tagline: 'The material atlas',
   heroTitle: 'A quieter kind\nof extraordinary.',
   heroDescription:

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Kapish Stonex</title>
+  <rect width="64" height="64" rx="14" fill="#22221f"/>
+  <g stroke="#c99d63" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 13V19C24 28 40 28 40 19V13"/>
+    <path d="M32 12V22" stroke="#d77a48"/>
+    <path d="M23 34C23 28 41 28 41 34V40C41 48 23 48 23 40ZM23 36H41M28 32V43M36 32V43M32 47V56M28 56H36"/>
+  </g>
+</svg>

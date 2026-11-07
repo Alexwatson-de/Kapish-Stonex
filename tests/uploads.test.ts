@@ -68,7 +68,7 @@ describe.skipIf(process.env.TEST_EMULATORS !== '1')(
       );
       ticket = r.ticket;
       publicId = (await services().db.doc(`uploadTickets/${ticket}`).get()).get('publicId');
-      expect(publicId).toMatch(/^stillvein\/products\/qa\/textures\//);
+      expect(publicId).toMatch(/^kapish-stonex\/products\/qa\/textures\//);
       expect(r).not.toHaveProperty('signature');
       expect(r).not.toHaveProperty('secret');
     });

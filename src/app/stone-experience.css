@@ -1,4 +1,4 @@
-/* STILLVEIN — Stone in motion
+/* Kapish Stonex — Stone in motion
  * The reference is interpreted through scroll choreography, not its green brand.
  * Neutral mineral palette; native scroll with a pinned, damped WebGL sequence.
  * Existing catalogue forms, routes, data, upload policy and studio controls stay intact.
@@ -124,38 +124,42 @@ body > .admin-shell {
   border-color: #ffffff14;
 }
 .wordmark {
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 23px;
-  letter-spacing: 0.1em;
-  gap: 13px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: -0.025em;
+  gap: 12px;
+  flex-shrink: 0;
 }
-.wordmark small {
-  font-size: 8px;
-  letter-spacing: 0.24em;
-  color: #958875;
-}
-.brand-mark {
-  display: flex;
-  width: 27px;
-  height: 30px;
-  gap: 3px;
-  align-items: center;
-  padding: 0;
-  transform: skewY(-17deg);
-}
-.brand-mark i {
+.brand-type {
   display: block;
-  width: 6px;
-  height: 24px;
-  background: currentColor;
 }
-.brand-mark i:nth-child(2) {
-  height: 30px;
-  background: #b69d7a;
+.brand-name {
+  display: block;
+  line-height: 1;
 }
-.brand-mark i:nth-child(3) {
-  height: 20px;
+.brand-descriptor {
+  display: block;
+  margin-top: 7px;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.36em;
+  line-height: 1;
+}
+.brand-emblem {
+  width: 44px;
+  height: 53px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.footer-top .wordmark,
+.login-art .wordmark {
+  margin-bottom: 24px;
+}
+.admin-sidebar .wordmark {
+  font-size: 30px;
 }
 .header nav {
   font-size: 10px;
@@ -808,10 +812,10 @@ footer {
   padding-top: 23px;
 }
 .footer-wordmark {
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 15.4vw;
-  letter-spacing: -0.055em;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 12.2vw;
+  letter-spacing: -0.05em;
   line-height: 0.95;
   white-space: nowrap;
   margin: 50px -1% -1.5vw;
@@ -1347,22 +1351,16 @@ tbody tr:hover {
     gap: 12px;
   }
   .wordmark {
-    font-size: 20px;
+    font-size: 29px;
     gap: 10px;
   }
-  .brand-mark {
-    width: 23px;
-    height: 26px;
+  .brand-emblem {
+    width: 36px;
+    height: 44px;
   }
-  .brand-mark i {
-    width: 5px;
-    height: 21px;
-  }
-  .brand-mark i:nth-child(2) {
-    height: 27px;
-  }
-  .brand-mark i:nth-child(3) {
-    height: 17px;
+  .brand-descriptor {
+    font-size: 9px;
+    letter-spacing: 0.34em;
   }
   .header-cta {
     font-size: 8px;
@@ -1603,7 +1601,7 @@ tbody tr:hover {
     grid-template-columns: 1fr 1fr;
   }
   .footer-wordmark {
-    font-size: 15vw;
+    font-size: 12vw;
     margin: 40px 0 -1.5vw;
   }
   .footer-wordmark span {
@@ -1830,6 +1828,13 @@ tbody tr:hover {
   }
   .applications h3 {
     font-size: 21px;
+  }
+  .applications {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .category-tabs {
+    max-width: 100%;
+    overflow-x: auto;
   }
   .sort-label {
     font-size: 0;

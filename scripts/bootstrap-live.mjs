@@ -104,7 +104,7 @@ let sa = await request(
 if (!sa)
   sa = await request(`https://iam.googleapis.com/v1/projects/${project}/serviceAccounts`, 'POST', {
     accountId,
-    serviceAccount: { displayName: 'STILLVEIN server - catalog and staff administration' },
+    serviceAccount: { displayName: 'Kapish Stonex server - catalog and staff administration' },
   });
 const policy = await request(
   `https://cloudresourcemanager.googleapis.com/v1/projects/${project}:getIamPolicy`,

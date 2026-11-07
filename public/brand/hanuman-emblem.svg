@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 96" fill="none">
+  <title>Kapish Stonex — Hanumanji-inspired gada and tilak emblem</title>
+  <desc>An original devotional sign: a ceremonial gada, upright sacred tilak and a restrained temple arch. Not a portrait of the deity.</desc>
+  <g stroke="#b7894e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 78V38C13 23 25 13 40 5C55 13 67 23 67 38V78"/>
+    <path d="M19 75V39C19 27 28 20 40 13C52 20 61 27 61 39V75" opacity=".5"/>
+    <path d="M32 28V36C32 47 48 47 48 36V28"/>
+    <path d="M40 25V40" stroke="#cc6b38" stroke-width="3.2"/>
+    <path d="M29 53C29 46 51 46 51 53V60C51 71 29 71 29 60Z"/>
+    <path d="M29 55H51M30 63H50M36 50V65M44 50V65" opacity=".8"/>
+    <path d="M36 69H44L43 84H37ZM35 87H45M26 91H54"/>
+  </g>
+</svg>

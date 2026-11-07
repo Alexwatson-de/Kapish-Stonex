@@ -26,6 +26,7 @@ import { Enquiries } from './enquiries';
 import { Assets, Audit, Settings, Taxonomies, Users } from './management';
 type Actor = { uid: string; email: string; role: Role };
 import { OverviewPanel as Overview } from './overview';
+import { BrandIdentity } from '../brand-identity';
 export default function Dashboard() {
   const [actor, setActor] = useState<Actor | null>(null);
   const [loading, setLoading] = useState(true);
@@ -74,8 +75,8 @@ export default function Dashboard() {
     return (
       <main id="main" className="login-page">
         <section className="login-art">
-          <Link href="/" className="wordmark">
-            {brand.brand}
+          <Link href="/" className="wordmark" aria-label={`${brand.brand} home`}>
+            <BrandIdentity name={brand.brand} />
           </Link>
           <div>
             <span className="eyebrow">THE ATLAS, BEHIND THE SCENES</span>
@@ -182,8 +183,8 @@ export default function Dashboard() {
   return (
     <div className="admin-shell">
       <aside className="admin-sidebar">
-        <Link className="wordmark" href="/">
-          {brand.brand}
+        <Link className="wordmark" href="/" aria-label={`${brand.brand} home`}>
+          <BrandIdentity name={brand.brand} />
         </Link>
         <span className="eyebrow">ATLAS MANAGEMENT</span>
         <nav aria-label="Admin navigation">

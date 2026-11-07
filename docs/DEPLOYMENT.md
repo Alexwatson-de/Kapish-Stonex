@@ -2,7 +2,7 @@
 
 ## Current hosted deployment
 
-STILLVEIN is hosted at **https://stillvein.vercel.app**, with staff access at **/admin**. The owner explicitly selected personal, non-commercial demo use on the existing Vercel Hobby team (`dhruv-820e`). The Vercel project is connected to `Alexwatson-de/STILLVEIN`, production branch `main`, Next.js with Node.js 24. Paid plans were not enabled. Hobby must not be used for commercial operation.
+Kapish Stonex's canonical deployment is **https://kapish-stonex.vercel.app**, with staff access at **/admin**. The prior domain redirects to the new origin so strict CSRF checks continue to protect forms. The owner explicitly selected personal, non-commercial demo use on the existing Vercel Hobby team (`dhruv-820e`). The existing Vercel project was renamed, not recreated, and is connected to `Alexwatson-de/Kapish-Stonex`, production branch `main`, Next.js with Node.js 24. Paid plans were not enabled. Hobby must not be used for commercial operation. See [rebrand and publishing verification](REBRAND.md).
 
 The dedicated `stillvein` Firebase project remains in `nam5`, with deny-by-default rules/indexes and the scoped server identity. Firebase billing remains disabled. The production domain was added to Firebase Auth authorized domains without removing existing domains. Hosted browser sign-in, actual Cloudinary gallery/texture uploads, Firestore persistence, 3D drawing, enquiries and cleanup passed. Temporary hosted test assets/accounts were removed; previously requested sample data and owner materials remain.
 
@@ -49,7 +49,7 @@ Server-only secrets:
 - `CLOUDINARY_API_SECRET`
 - `CLOUDINARY_UPLOAD_PRESET`
 
-Create a **signed** image upload preset, for example `stillvein_signed`:
+Use the existing **signed** image upload preset (`stillvein_signed` in this installation); it is a stable provider identifier, not displayed branding:
 
 - unsigned mode disabled;
 - allowed formats exactly a safe subset of `jpg`, `jpeg`, `png`, `webp`;
@@ -61,9 +61,11 @@ Create a **signed** image upload preset, for example `stillvein_signed`:
 
 The server verifies that the preset is signed, allows only approved raster formats and disables overwrite. The browser receives only an owned, expiring ticket, never a reusable Cloudinary signature. It transfers raw bytes to the authenticated server, which caps the actual stream at the deployment limit (4 MB on Vercel, 10 MB local default), checks raster magic bytes, validates MIME/format and fully decodes within a 25-megapixel limit. Only then does the Cloudinary SDK sign and send the image. Assets live under:
 
-- `stillvein/products/{product-id}/gallery/{uuid}`
-- `stillvein/products/{product-id}/textures/{uuid}`
-- `stillvein/site/{uuid}`
+- `kapish-stonex/products/{product-id}/gallery/{uuid}`
+- `kapish-stonex/products/{product-id}/textures/{uuid}`
+- `kapish-stonex/site/{uuid}`
+
+Existing assets under the old prefix are retained verbatim; their registry references, signed transfer/finalization and deletion checks do not rely on renaming old paths.
 
 After the validated server-signed transfer, finalization queries Cloudinary by the fixed public ID, validates its real metadata and registers the asset. Only then may a product reference it. Failed uploads do not alter existing product images. Cancellation stops the browser request; an already-started provider transfer may leave an unreferenced asset for authorized reconciliation. Tickets expire after one hour and are reserved before transfer to prevent concurrent reuse. Do not delete provider assets manually without checking the registry.
 

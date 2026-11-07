@@ -308,7 +308,7 @@ test('admin manages the saved sample enquiry, notes, follow-up and CSV export', 
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: /Export 1 visible enquiries/ }).click();
   const download = await downloadPromise;
-  expect(download.suggestedFilename()).toBe('stillvein-enquiries.csv');
+  expect(download.suggestedFilename()).toBe('kapish-stonex-enquiries.csv');
   await page.getByRole('button', { name: 'Overview', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'The enquiry pipeline' })).toBeVisible();
   await page.screenshot({ path: 'artifacts/qa/live-samples-admin-dashboard.png', fullPage: true });

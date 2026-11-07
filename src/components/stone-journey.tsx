@@ -161,7 +161,7 @@ export function StoneJourney({
         )}
         <div className="journey-vignette" aria-hidden="true" />
         <div className="journey-coordinate">
-          <span>STILLVEIN / MATERIAL STUDY 01</span>
+          <span>{settings.brand.toUpperCase()} / MATERIAL STUDY 01</span>
           <span>FORMED BY NATURE. EXPLORED BY YOU.</span>
         </div>
         <div className="journey-intro">

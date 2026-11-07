@@ -1,8 +1,16 @@
-# STILLVEIN — The Material Atlas
+# Kapish Stonex — The Material Atlas
 
 A standalone natural-stone catalog, specification and interactive material-visualization application. This is **not a factory website, direct-purchase marketplace or payment system**. Visitors discover, compare and enquire; authorized staff curate the catalog and manage conversations.
 
 ## Delivery status
+
+### Kapish Stonex identity — 7 November 2026
+
+Renamed at the owner's request with an elegant DM Serif Display / DM Sans wordmark and original Hanumanji-inspired gada/tilak emblem. The identity is shared by public pages, staff sign-in/sidebar, page metadata, favicons, social cards and CSV downloads. Existing comparison selections migrate safely. The stone-in-motion experience, catalogue and service data are retained.
+
+The original GitHub repository is renamed to [Alexwatson-de/Kapish-Stonex](https://github.com/Alexwatson-de/Kapish-Stonex), preserving its history and visibility. The same Vercel project is renamed and linked to the same repository ID. Canonical hosting is [kapish-stonex.vercel.app](https://kapish-stonex.vercel.app); old hosted addresses redirect after the new deployment. Publishing verification is recorded in [the rebrand report](docs/REBRAND.md).
+
+The existing Firebase project ID, service identity, signed upload preset and earlier asset URLs remain unchanged intentionally. Recreating them would risk existing data. Only new image destinations use the new name. The workspace directory also stays stable for existing links. Brand migration changed only the saved `brand` setting plus an audit record; inventory fingerprints for products, images, enquiries, users and taxonomy were unchanged. No plan, billing or database-rule change.
 
 ### Reference-inspired interface
 
@@ -12,9 +20,9 @@ The homepage animation is separate from the existing interactive material studio
 
 Implemented and verified with Firebase emulators **and actual Firebase/Cloudinary services**. The dedicated `stillvein` Firebase project now has a default `nam5` database, deployed deny-by-default rules/indexes, a scoped server identity and the approved initial administrator. Billing remains disabled. Real browser gallery/texture uploads, Cloudinary delivery, Firestore references, interactive 3D rendering and safe cleanup passed a live-service smoke test.
 
-**Hosted demo:** https://stillvein.vercel.app · **Staff dashboard:** https://stillvein.vercel.app/admin
+**Hosted demo:** https://kapish-stonex.vercel.app · **Staff dashboard:** https://kapish-stonex.vercel.app/admin
 
-Source repository: https://github.com/Alexwatson-de/STILLVEIN. GitHub `main` is connected to Vercel production deployments. The owner explicitly confirmed personal, non-commercial demo use on the existing Hobby team; no paid plan or Firebase billing was enabled. Real hosted admin login, Cloudinary upload/delivery, 3D rendering, enquiry persistence and security checks passed. New hosted uploads are limited to **4 MB / 25 MP** to stay below Vercel's 4.5 MB request ceiling; existing higher-resolution images remain intact. Local unrestricted hosting defaults to 10 MB.
+Source repository: https://github.com/Alexwatson-de/Kapish-Stonex. GitHub `main` is connected to Vercel production deployments. The owner explicitly confirmed personal, non-commercial demo use on the existing Hobby team; no paid plan or Firebase billing was enabled. Earlier real hosted admin login, Cloudinary upload/delivery, 3D rendering, enquiry persistence and security checks passed. New hosted uploads are limited to **4 MB / 25 MP** to stay below Vercel's 4.5 MB request ceiling; existing higher-resolution images remain intact. Local unrestricted hosting defaults to 10 MB.
 
 Six clearly labelled sample materials and two synthetic enquiries remain in the connected database. Owner-entered materials are preserved. Local development and the separate emulator database remain available through the documented scripts. Commercial use requires an eligible plan and renewed policy/operational review.
 

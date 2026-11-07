@@ -4,13 +4,14 @@ import { ArrowUpRight, Plus, Check, Box } from 'lucide-react';
 import { Product } from '@/lib/schema';
 import { imageUrl, priceLabel } from '@/lib/catalog';
 import { useEffect, useState } from 'react';
+import { readComparison, saveComparison } from '@/lib/comparison-storage';
 export function CompareButton({ id }: { id: string }) {
   const [selected, setSelected] = useState(false);
   const [message, setMessage] = useState('');
   useEffect(() => {
     const sync = () => {
       try {
-        setSelected(JSON.parse(localStorage.getItem('stillvein.compare') || '[]').includes(id));
+        setSelected(readComparison(localStorage).includes(id));
       } catch {
         setSelected(false);
       }
@@ -27,16 +28,18 @@ export function CompareButton({ id }: { id: string }) {
       onClick={() => {
         let ids: string[] = [];
         try {
-          ids = JSON.parse(localStorage.getItem('stillvein.compare') || '[]');
+          ids = readComparison(localStorage);
         } catch {}
         if (!ids.includes(id) && ids.length >= 3) {
           setMessage('Compare is limited to 3 materials. Remove one on the Compare page.');
           return;
         }
-        localStorage.setItem(
-          'stillvein.compare',
-          JSON.stringify(ids.includes(id) ? ids.filter((x) => x !== id) : [...ids, id]),
-        );
+        try {
+          saveComparison(localStorage, ids.includes(id) ? ids.filter((x) => x !== id) : [...ids, id]);
+        } catch {
+          setMessage('Comparison storage is unavailable. Enable browser storage to save a selection.');
+          return;
+        }
         window.dispatchEvent(new Event('compare-change'));
         setMessage('');
       }}
